@@ -5,7 +5,7 @@ import './styles/components/App.scss'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 function App() {
-const dark = false;
+const dark = true;
 
   return (
     <div className={`App-${ dark? 'dark'  : 'light' }`}>
