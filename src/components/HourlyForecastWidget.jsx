@@ -5,7 +5,7 @@ function HourlyForecastWidget({data}) {
     const {date , icon , summary , temperature , precipitation, wind} = data;
     console.log(data)
 //date formate 
-const now = {
+const now_date = {
     day :new Intl.DateTimeFormat(navigator.language,{
      weekday:"short",
      day:"2-digit",
@@ -14,13 +14,26 @@ const now = {
     time:new Intl.DateTimeFormat(navigator.language,{
      hour:"2-digit",
      minute:"2-digit",  
-    }).format(new Date())  ,
+    }).format(new Date().setMinutes(0)),
 }
 
+const waether_date = {
+    day :new Intl.DateTimeFormat(navigator.language,{
+     weekday:"short",
+     day:"2-digit",
+     month:"2-digit"   
+    }).format(new Date(date)) ,
+    time:new Intl.DateTimeFormat(navigator.language,{
+     hour:"2-digit",
+     minute:"2-digit",  
+    }).format(new Date(date).setMinutes(0)),
+}
+
+waether_date.day = waether_date.day === now_date.day && waether_date.time === now_date.time ? "Today" : waether_date.time === "00:00" ? waether_date.day : '' ;
   return (
     <div className="widget" >
-      <div className="day">{date}</div>
-      <div className="time">{date}</div>
+      <div className="day">{waether_date.day}</div>
+      <div className="time">{waether_date.time}</div>
       <div className="icon-temp">
         <div className="icon">
             <WeatherIcon  iconNumber={icon} summary={summary} />
