@@ -3,7 +3,7 @@ import WeatherIcon from "./WeatherIcon";
 
 function HourlyForecastWidget({data}) {
     const {date , icon , summary , temperature , precipitation, wind} = data;
-    console.log(data)
+
 //date formate 
 const now_date = {
     day :new Intl.DateTimeFormat(navigator.language,{

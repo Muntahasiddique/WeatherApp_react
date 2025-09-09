@@ -5,7 +5,6 @@ import WeatherIcon from './WeatherIcon'
 
 function CurrentWeather() {
     const data = getCurrentWeather()
-    console.log(data)
 //destructuring
 const {cloud_cover,feels_like,humidity,icon_num, precipitation, summary , temperature ,uv_index , visibility,wind
 } = data
