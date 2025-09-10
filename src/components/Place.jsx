@@ -1,10 +1,12 @@
-
+import { useContext } from "react"
+import{ WeatherContext} from '../context/weather.context'
 
 function Place() {
+  const {place} = useContext(WeatherContext)
   return (
     <div>
     <i className="bi bi-geo-alt-fill"></i>
-     <b>London</b>,United Kingdom
+     <b>{place.name}</b>,{place.country}
     </div>
   )
 }
