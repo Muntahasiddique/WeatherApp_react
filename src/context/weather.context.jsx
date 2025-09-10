@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { DEFAULT_PLACE } from '../utils';
+import { DEFAULT_PLACE } from '../constants';
 import { getWeatherData } from '../api';
 
 export const WeatherContext = createContext();
@@ -34,7 +34,7 @@ setdailyForecast(df.daily.data)
 } , [place])
 
     return (
-        <WeatherContext.Provider value={{place ,loading , currentWeather ,hourlyForcast,dailyForcast}}>
+        <WeatherContext.Provider value={{place ,loading , currentWeather ,hourlyForcast,dailyForcast,setPlace}}>
             {children}
         </WeatherContext.Provider>
     );

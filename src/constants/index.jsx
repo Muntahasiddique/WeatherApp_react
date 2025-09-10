@@ -9,3 +9,10 @@ lon:"67.0104E",
 timezone:"Asia/Karachi",
 type:"settlement",
 }
+export const measurement_systems ={
+    auto: 'auto',
+metric: 'metric',
+us: 'us',
+uk: 'uk',
+ca:'ca',
+}
